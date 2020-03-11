@@ -59,13 +59,12 @@ class GameOfLife {
             }
             System.out.println();
         }
-        int count = 0;
-        while (count != 10) {
-            count++;
-            nextGeneration(future, M, N);
-            if (count == 10) {
-                break;
-            }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
+        System.out.print("\033[2J");
+        nextGeneration(future, M, N);
     }
 }
