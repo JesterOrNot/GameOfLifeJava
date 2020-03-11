@@ -11,6 +11,7 @@ class GameOfLife {
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } };
+        System.out.print("\033[2J");
         for (int i = 0; i < M; i++) {
             for (int j = 0; j < N; j++) {
                 if (grid[i][j] == 0) {
@@ -21,6 +22,12 @@ class GameOfLife {
             }
             System.out.println();
         }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.print("\033[2J");
         nextGeneration(grid, M, N);
     }
 
